@@ -105,8 +105,8 @@ def ridgeOrientation(vSobel, hSobel):
             vx = 0
             vy = 0
             count = 0
-            verticalCells = 0
-            macroResult = 0
+            verticalCells = 0.0
+            macroResult = 0.0
             for k in range (0, macroInnerWidth):
                 for l in range(0, macroInnerHeight):
                     #vx += 2 * (vSobel[i][j][k][l]) * (hSobel[i][j][k][l])
@@ -263,9 +263,10 @@ for infile in sys.argv[1:]:
 
     ridgeOr = ridgeOrientation(sobelVert, sobelHor)
     #printMacroBlock(im, 15, 14)
-    blackMacroBlock(im, 17, 7)
-    print(sobelVert[18][7])
-    print(sobelHor[18][7])
+    #blackMacroBlock(im, 6, 7)
+    #blackMacroBlock(im, 7, 6)
+    #print(sobelVert[7][7])
+    #print(sobelHor[7][7])
     fig, ax = plt.subplots()
     ax.imshow(im)
     #ridgeLines = printRidgeOrientation(linearRegression)
